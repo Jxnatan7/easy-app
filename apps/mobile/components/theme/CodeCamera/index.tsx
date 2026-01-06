@@ -92,13 +92,16 @@ export const CodeCamera = ({
   if (!permission.granted) {
     return (
       <Box style={styles.permissionContainer}>
-        <Text>Você precisa permitir o uso da camera para ler o código</Text>
+        <Text variant="body">
+          Você precisa permitir o uso da camera para ler o código
+        </Text>
         <Button
           variant="transparent"
           onPress={requestPermission}
           text="Permitir acesso"
           textProps={{
             style: styles.linkText,
+            color: "mainText",
           }}
         />
       </Box>

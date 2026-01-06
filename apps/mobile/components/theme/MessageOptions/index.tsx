@@ -32,6 +32,7 @@ export const MessageOptions = ({
         Sugestões:
       </Text>
       <FlashList
+        keyExtractor={(item, index) => index.toString()}
         variant="messageOptions"
         data={options}
         renderItem={({ item }: any) => (

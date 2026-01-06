@@ -3,7 +3,7 @@ import { Container } from "@/components/theme/Container";
 import { MessageOptions } from "@/components/theme/MessageOptions";
 import { StepHeader } from "@/components/theme/StepHeader";
 import { TextInput } from "@/components/theme/TextInput";
-import { useCommunicationRequestStore } from "@/stores/communicationRequestStore";
+import { useCommunicationRequestContext } from "@/contexts/CommunicationRequestContext";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 
@@ -11,17 +11,20 @@ export default function InitialMessage() {
   const { push } = useRouter();
   const [messageSelected, setMessageSelected] = useState<string>();
 
+  const store = useCommunicationRequestContext();
+
   const handleSubmit = () => {
     if (!messageSelected) return;
-    useCommunicationRequestStore.getState().setInitialMessage(messageSelected);
+    store.setInitialMessage(messageSelected);
     push("/(communication-request)/(steps)/name");
   };
 
   return (
     <Container variant="screen">
       <StepHeader
-        title="Escreva a sua mensagem inicial"
-        subtitle="Informe aqui o motivo do seu contato com o usuário"
+        title="Escreva a sua mensagem inicial para:"
+        subtitle={store.user?.name}
+        subtitleProps={{ fontSize: 24 }}
       />
       <MessageOptions
         messageSelected={messageSelected}
@@ -33,6 +36,7 @@ export default function InitialMessage() {
         placeholder="Ex.: Ola, gostaria de saber mais sobre..."
         minHeight={120}
         onEndEditing={({ nativeEvent }) => setMessageSelected(nativeEvent.text)}
+        onChangeText={(text) => setMessageSelected(text)}
         multiline
       />
       <Button

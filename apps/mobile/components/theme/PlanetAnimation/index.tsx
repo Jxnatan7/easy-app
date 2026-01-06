@@ -1,12 +1,13 @@
 import { Box } from "@/components/restyle";
 import LottieView from "lottie-react-native";
-import { StyleSheet, useColorScheme } from "react-native";
+import { StyleSheet } from "react-native";
 import planetAnimationDark from "@/assets/animations/planet-dark.json";
 import planetAnimationLight from "@/assets/animations/planet-light.json";
 import { useMemo } from "react";
+import { useAppStore } from "@/stores/appStore";
 
 export function PlanetAnimation() {
-  const colorScheme = useColorScheme();
+  const colorScheme = useAppStore((state) => state.theme);
 
   const animation = useMemo(
     () => (colorScheme === "dark" ? planetAnimationDark : planetAnimationLight),

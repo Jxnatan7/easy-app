@@ -8,6 +8,7 @@ import { SearchInput } from "@/components/theme/SearchInput";
 import useValidateCommunication from "@/hooks/useValidateCommunication";
 import { ActionModal } from "@/components/theme/ActionModal";
 import { useDebounce } from "@/hooks/useDebounce";
+import { ThemeButton } from "@/components/theme/ThemeButton";
 
 const { width } = Dimensions.get("window");
 
@@ -47,7 +48,11 @@ export default function Home() {
   return (
     <Container
       variant="screen"
-      containerHeaderProps={{ title: "Conversas", hideBackButton: true }}
+      containerHeaderProps={{
+        title: "Conversas",
+        hideBackButton: true,
+        children: <ThemeButton />,
+      }}
     >
       <SearchInput
         onChangeText={handleSearch}

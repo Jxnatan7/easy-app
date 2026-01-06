@@ -2,6 +2,7 @@ import { Box, Text } from "@/components/restyle";
 import Button from "@/components/theme/Button";
 import { Container } from "@/components/theme/Container";
 import { PlanetAnimation } from "@/components/theme/PlanetAnimation";
+import { ThemeButton } from "@/components/theme/ThemeButton";
 import { useAppStore } from "@/stores/appStore";
 import { useAuthStore } from "@/stores/authStore";
 import { useCommunicationRequestStore } from "@/stores/communicationRequestStore";
@@ -46,7 +47,14 @@ export default function App() {
   const { push } = useRouter();
 
   return (
-    <Container variant="screen" hideHeader>
+    <Container
+      variant="screen"
+      containerHeaderProps={{
+        hideBackButton: true,
+        justifyContent: "flex-end",
+      }}
+      containerHeaderChildren={<ThemeButton />}
+    >
       <Box flex={1} justifyContent="flex-end" alignItems="center" mb="xl">
         <Text variant="header" mb="l">
           Easy - App

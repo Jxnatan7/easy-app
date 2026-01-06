@@ -47,7 +47,7 @@ export default function User() {
         validate={userFormValidation}
         onSubmit={onSubmit}
         enableReinitialize
-        containerProps={{ marginBottom: "l" }}
+        containerProps={{ marginBottom: "s" }}
       >
         <FormTextInput name="name" label="Nome" placeholder="Seu Nome" />
 
@@ -80,7 +80,7 @@ export default function User() {
             style={{
               backgroundColor: "white",
               alignSelf: "center",
-              marginTop: 20,
+              marginTop: 50,
             }}
             size={200}
             padding={10}

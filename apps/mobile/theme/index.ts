@@ -158,7 +158,7 @@ const theme = createTheme({
       color: "buttonTextLight",
     },
     chip: {
-      width: 350,
+      width: 270,
       height: 40,
       alignItems: "center",
       justifyContent: "center",
@@ -377,7 +377,7 @@ const theme = createTheme({
     code: {
       fontFamily: "MulishFontBold",
       backgroundColor: "inputBackgroundLight",
-      color: "inputTextLight",
+      color: "inputText",
       width: {
         smallPhone: 30,
         phone: 35,

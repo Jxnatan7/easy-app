@@ -1,15 +1,23 @@
-import { Text } from "@/components/restyle";
+import { Text, TextProps } from "@/components/restyle";
 
 export const StepHeader = ({
   title = "",
+  titleProps,
   subtitle = "",
+  subtitleProps,
 }: {
   title: string;
-  subtitle: string;
+  titleProps?: TextProps;
+  subtitle?: string;
+  subtitleProps?: TextProps;
 }) => {
   return (
     <>
-      <Text variant="header" mt={{ smallPhone: "l", phone: "xxxl" }}>
+      <Text
+        variant="header"
+        mt={{ smallPhone: "l", phone: "xxxl" }}
+        {...titleProps}
+      >
         {title}
       </Text>
       <Text
@@ -17,6 +25,7 @@ export const StepHeader = ({
         mt="m"
         px="xl"
         mb={{ smallPhone: "xl", phone: "xxl" }}
+        {...subtitleProps}
       >
         {subtitle}
       </Text>

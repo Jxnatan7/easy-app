@@ -9,8 +9,9 @@ import KeyboardProvider from "@/contexts/KeyboardContext";
 import { AuthProvider } from "@/contexts/AuthProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { useColorScheme } from "react-native";
 import useAssets from "@/hooks/useAssets";
+import { useAppStore } from "@/stores/appStore";
+import { useDeviceTheme } from "@/hooks/useDeviceTheme";
 
 export { ErrorBoundary } from "expo-router";
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const appIsReady = useAssets();
+  useDeviceTheme();
 
   useEffect(() => {
     if (appIsReady) {
@@ -38,8 +40,7 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme();
-
+  const colorScheme = useAppStore((state) => state.theme);
   const currentTheme = colorScheme === "dark" ? darkTheme : theme;
 
   return (

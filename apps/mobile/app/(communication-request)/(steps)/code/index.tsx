@@ -3,8 +3,8 @@ import { CodeCamera } from "@/components/theme/CodeCamera";
 import CodeInput from "@/components/theme/CodeInput";
 import { Container } from "@/components/theme/Container";
 import { StepHeader } from "@/components/theme/StepHeader";
+import { useCommunicationRequestContext } from "@/contexts/CommunicationRequestContext";
 import UserService from "@/services/UserService";
-import { useCommunicationRequestStore } from "@/stores/communicationRequestStore";
 import { usePathname, useRouter } from "expo-router";
 import { useState } from "react";
 
@@ -12,10 +12,10 @@ export default function Code() {
   const { push } = useRouter();
   const [codeInput, setCodeInput] = useState("CAMERA");
   const pathName = usePathname();
-  const store = useCommunicationRequestStore.getState();
+  const store = useCommunicationRequestContext();
 
   const onFullfill = (code: string) => {
-    UserService.findByCode(code).then((user) => {
+    UserService.findByCode(code.toUpperCase()).then((user) => {
       if (user) {
         store.setUser(user);
         push(`/(communication-request)/(steps)/initial-message`);

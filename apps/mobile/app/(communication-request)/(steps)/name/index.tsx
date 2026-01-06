@@ -8,15 +8,15 @@ import { StepHeader } from "@/components/theme/StepHeader";
 import { TextInput } from "@/components/theme/TextInput";
 
 import useCreateCommunicationRequest from "@/hooks/useCreateCommunicationRequest";
-import { useCommunicationRequestStore } from "@/stores/communicationRequestStore";
 import { useDebounce } from "@/hooks/useDebounce";
+import { useCommunicationRequestContext } from "@/contexts/CommunicationRequestContext";
 
 export default function Name() {
   const { push } = useRouter();
   const [name, setName] = useState<string>("");
 
   const { mutateAsync, isPending } = useCreateCommunicationRequest();
-  const store = useCommunicationRequestStore.getState();
+  const store = useCommunicationRequestContext();
 
   const { debouncedFn: handleNameChange, clear: clearDebounce } = useDebounce(
     (text: string) => {
@@ -50,7 +50,7 @@ export default function Name() {
     <Container variant="screen">
       <StepHeader
         title="Insira o seu nome"
-        subtitle="O seu nome é essencial para que o residente aceite a sua solicitação"
+        subtitle="O seu nome é essencial para que o usuário aceite a sua solicitação"
       />
 
       <TextInput

@@ -1,25 +1,36 @@
-import { useCommunicationRequestStore } from "@/stores/communicationRequestStore";
-import { createContext, useCallback } from "react";
-
-type CommunicationRequestContextValue = {
-  setCode: (code: string) => void;
-};
+import {
+  CommunicationRequestState,
+  useCommunicationRequestStore,
+} from "@/stores/communicationRequestStore";
+import { createContext, useContext, useMemo } from "react";
 
 const CommunicationRequestContext =
-  createContext<CommunicationRequestContextValue | null>(null);
+  createContext<CommunicationRequestState | null>(null);
 
 export const CommunicationRequestProvider = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  const setCode = useCallback((code: string) => {
-    useCommunicationRequestStore.setState({ code: code });
-  }, []);
+  const store = useCommunicationRequestStore.getState();
+
+  const storeContext = useMemo(() => {
+    return store;
+  }, [store]);
 
   return (
-    <CommunicationRequestContext.Provider value={{ setCode }}>
+    <CommunicationRequestContext.Provider value={storeContext}>
       {children}
     </CommunicationRequestContext.Provider>
   );
+};
+
+export const useCommunicationRequestContext = () => {
+  const context = useContext(CommunicationRequestContext);
+  if (context === null) {
+    throw new Error(
+      "useCommunicationRequest must be used within a CommunicationRequestProvider"
+    );
+  }
+  return context;
 };
