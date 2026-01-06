@@ -62,6 +62,8 @@ export default function Name() {
       />
 
       <Button
+        variant="primary"
+        alignSelf="center"
         onPress={handleSubmit}
         text="Continuar"
         marginTop="xxxl"

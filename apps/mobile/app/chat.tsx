@@ -32,11 +32,13 @@ export default function ChatScreen() {
     blockBack,
     visitorName,
     communicationRequestId: selectedRequestId,
+    status,
   } = useLocalSearchParams<{
     chatId: string;
     blockBack: string;
     visitorName: string;
     communicationRequestId: string;
+    status: string;
   }>();
 
   const { push, replace, canDismiss, dismissAll } = useRouter();
@@ -131,9 +133,9 @@ export default function ChatScreen() {
         variant="chat"
         containerHeaderProps={{
           title: visitorName || "Chat",
-          backgroundColor: "backgroundGrayLight",
           hideBackButton: isBackBlocked,
-          children: (
+          backButtonFallback: () => push("/(tabs)"),
+          children: status !== "FINALIZED" && (
             <IconButton
               icon={<FontAwesome5 name="ellipsis-v" size={24} color="black" />}
               onPress={() => setIsOpen(true)}
@@ -154,14 +156,14 @@ export default function ChatScreen() {
 
         <MessageInput
           onSend={handleSend}
-          editable={connectionStatus === "connected"}
+          editable={connectionStatus === "connected" && status !== "FINALIZED"}
         />
         <BottomSheet
           isVisible={isOpen}
           onClose={() => setIsOpen(false)}
           height="80%"
         >
-          <Text textAlign="center" variant="infoTitle">
+          <Text textAlign="center" variant="infoTitle" color="textLight">
             Finalizar Conversa ?
           </Text>
           <Button

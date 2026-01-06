@@ -44,7 +44,10 @@ export default function Button({
         colors={gradientColors}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
-        style={[styles.background, { borderRadius: btnVariant?.borderRadius }]}
+        style={[
+          styles.background,
+          { borderRadius: btnVariant?.borderRadius ?? 10 },
+        ]}
       >
         {text && (
           <Text

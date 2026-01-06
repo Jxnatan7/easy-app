@@ -27,14 +27,14 @@ export const Container = ({
   const theme = useTheme<Theme>();
 
   return (
-    <RestyleContainer {...props}>
-      <LinearGradient
-        colors={[
-          theme.colors.backgroundGradient0,
-          theme.colors.backgroundGradient1,
-        ]}
-        style={styles.background}
-      >
+    <LinearGradient
+      colors={[
+        theme.colors.backgroundGradient0,
+        theme.colors.backgroundGradient1,
+      ]}
+      style={[styles.background]}
+    >
+      <RestyleContainer {...props}>
         {!hideHeader && (
           <ContainerHeader
             children={containerHeaderChildren}
@@ -43,8 +43,8 @@ export const Container = ({
         )}
         <Box mt="xxxl" />
         {children}
-      </LinearGradient>
-    </RestyleContainer>
+      </RestyleContainer>
+    </LinearGradient>
   );
 };
 

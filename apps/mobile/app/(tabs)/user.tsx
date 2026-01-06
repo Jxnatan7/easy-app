@@ -1,4 +1,4 @@
-import { RestyleTouchableOpacity, Text } from "@/components/restyle";
+import { RestyleTouchableOpacity } from "@/components/restyle";
 import { Container } from "@/components/theme/Container";
 import { Form, FormButton, FormTextInput } from "@/components/theme/Form";
 import { useAuthActions } from "@/contexts/AuthProvider";
@@ -7,12 +7,16 @@ import { userFormValidation } from "@/utils/schemaValidation";
 import { Alert } from "react-native";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { PressableCopyPaste } from "@/components/theme/PressableCopyPaste";
+import { useTheme } from "@shopify/restyle";
+import { Theme } from "@/theme";
+import QRCodeStyled from "react-native-qrcode-styled";
 
 const LogoutButton = () => {
+  const theme = useTheme<Theme>();
   const { logout } = useAuthActions();
   return (
     <RestyleTouchableOpacity onPress={() => logout()} variant="icon">
-      <MaterialIcons name="logout" size={24} color="black" />
+      <MaterialIcons name="logout" size={24} color={theme.colors.mainText} />
     </RestyleTouchableOpacity>
   );
 };
@@ -38,20 +42,12 @@ export default function User() {
         children: <LogoutButton />,
       }}
     >
-      <Text
-        width="100%"
-        maxWidth={450}
-        textAlign="left"
-        variant="infoTitle"
-        my="l"
-      >
-        Usuário
-      </Text>
       <Form
         initialValues={initialValues}
         validate={userFormValidation}
         onSubmit={onSubmit}
         enableReinitialize
+        containerProps={{ marginBottom: "l" }}
       >
         <FormTextInput name="name" label="Nome" placeholder="Seu Nome" />
 
@@ -78,6 +74,18 @@ export default function User() {
           />
         )}
 
+        {initialValues.code && (
+          <QRCodeStyled
+            data={initialValues.code}
+            style={{
+              backgroundColor: "white",
+              alignSelf: "center",
+              marginTop: 20,
+            }}
+            size={200}
+            padding={10}
+          />
+        )}
         <FormButton
           text={isEditing ? "Atualizar Dados" : "Salvar Tudo"}
           marginTop="xxxl"

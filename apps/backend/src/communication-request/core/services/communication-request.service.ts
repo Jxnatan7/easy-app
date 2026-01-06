@@ -107,7 +107,7 @@ export class CommunicationRequestService {
       sender: {
         name: communicationRequest.visitorName,
         role: UserRole.VISITOR,
-        id: visitorId,
+        _id: visitorId,
         userId: visitorId,
       },
       chatId: String(createdChat._id),
@@ -192,7 +192,7 @@ export class CommunicationRequestService {
       baseQuery,
       filterRequest,
       options: {
-        // searchableFields: ["content", "sender.name", "sender.displayName", "sender.email"],
+        searchableFields: ["visitorName", "initialMessage"],
         dateField: "createdAt",
       },
     });

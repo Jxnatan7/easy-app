@@ -9,16 +9,16 @@ export type MessageOptionsProps = Partial<RestyleFlashListProps> & {
 };
 
 const options = [
-  "Olá! Sou o entregador e já estou na portaria.",
-  "Oi! Cheguei na portaria para fazer a entrega.",
-  "Olá! Entregador aqui na portaria aguardando.",
-  "Oi! Sou o entregador e estou aqui na portaria.",
-  "Olá! A entrega chegou, estou na portaria.",
-  "Oi! Entregador aqui, estou na portaria.",
-  "Olá! Estou na portaria com a sua entrega.",
-  "Oi! Já estou na portaria com o pedido.",
-  "Olá! Sou o entregador, estou na portaria esperando.",
-  "Oi! Estou na portaria para entregar seu pedido.",
+  "Oi, tudo bem? Como você está?",
+  "Opa, tudo certo por aí?",
+  "Olá! Como vai o seu dia?",
+  "Oi! Tudo joia?",
+  "E aí, como estão as coisas?",
+  "Opa, tudo bem? Passando para dar um oi.",
+  "Oi, tudo certinho?",
+  "Olá! Como você tem passado?",
+  "E aí, tudo na paz?",
+  "Oi! Como vai essa força?",
 ];
 
 export const MessageOptions = ({

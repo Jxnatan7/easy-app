@@ -54,7 +54,12 @@ export const ActionModal = ({
           shadowOpacity={0.25}
           shadowRadius={3.84}
         >
-          <Text variant="containerHeader" textAlign="center" mb="s">
+          <Text
+            variant="containerHeader"
+            color="textLight"
+            textAlign="center"
+            mb="s"
+          >
             {title}
           </Text>
 

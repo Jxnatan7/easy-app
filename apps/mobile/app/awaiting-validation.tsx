@@ -16,6 +16,8 @@ const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export default function AwaitingValidation() {
   const token = useCommunicationRequestStore((s) => s.visitorToken);
+  const store = useCommunicationRequestStore.getState();
+
   const { replace } = useRouter();
   const [accepted, setAccepted] = useState<boolean | null>();
   const animationRef = useRef<LottieView>(null);
@@ -30,6 +32,11 @@ export default function AwaitingValidation() {
       return loadingAnimation;
     }
   }, [accepted]);
+
+  const backButtonFallback = () => {
+    store.clearAppData();
+    replace("/init");
+  };
 
   useEffect(() => {
     if (animationRef.current) {
@@ -68,11 +75,12 @@ export default function AwaitingValidation() {
     token: token,
     onAccepted: ({ communicationRequestId, chatId }) => {
       setAccepted(true);
+      store.setIsAwaitingResponse(false);
     },
   });
 
   return (
-    <Container variant="screen">
+    <Container variant="screen" containerHeaderProps={{ backButtonFallback }}>
       <Text variant="header" px="xl" mb="m" mt="xxxl">
         {accepted === true
           ? "Comunicação aceita!"

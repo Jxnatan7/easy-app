@@ -7,7 +7,7 @@ import { registerFormValidation } from "@/utils/schemaValidation";
 import { useAuthActions } from "@/contexts/AuthProvider";
 
 export default function Register() {
-  const { replace } = useRouter();
+  const { replace, push } = useRouter();
   const { register } = useAuthActions();
 
   const onSubmit = async (
@@ -30,7 +30,10 @@ export default function Register() {
   };
 
   return (
-    <Container variant="screen">
+    <Container
+      variant="screen"
+      containerHeaderProps={{ backButtonFallback: () => push("/login") }}
+    >
       <Text variant="header" mt="xxxl">
         Crie a sua conta
       </Text>
@@ -63,7 +66,7 @@ export default function Register() {
           secureTextEntry
         />
 
-        <FormButton text="Continuar" marginTop="xxxl" />
+        <FormButton variant="primary" text="Continuar" marginTop="xxxl" />
       </Form>
     </Container>
   );

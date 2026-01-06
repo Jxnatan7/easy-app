@@ -46,6 +46,7 @@ export default function Code() {
       <Button
         variant="primary"
         marginTop="xxl"
+        alignSelf="center"
         text={codeInput === "CAMERA" ? "Digitar código" : "Ler QR Code"}
         onPress={() => {
           setCodeInput((prev) => (prev === "CAMERA" ? "TEXT" : "CAMERA"));

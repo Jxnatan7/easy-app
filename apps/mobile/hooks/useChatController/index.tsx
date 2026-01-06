@@ -31,6 +31,7 @@ export function useChatController(chatId: string) {
     const historical = oldMessagesQuery.data?.items || [];
     return [...historical, ...liveMessages];
   }, [oldMessagesQuery.data, liveMessages]);
+  console.log("🚀 ~ useChatController ~ allMessages:", allMessages);
 
   return {
     messages: allMessages,

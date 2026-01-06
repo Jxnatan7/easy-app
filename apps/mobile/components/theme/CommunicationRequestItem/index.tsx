@@ -52,6 +52,8 @@ export const CommunicationRequestItem = ({
       alignItems="center"
       justifyContent="flex-start"
       gap="m"
+      marginBottom="s"
+      borderRadius={10}
       {...props}
     >
       {!hideIcon && (

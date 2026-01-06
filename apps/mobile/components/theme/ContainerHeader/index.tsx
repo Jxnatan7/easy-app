@@ -8,6 +8,7 @@ export type ContainerHeaderProps = {
   title?: string;
   children?: React.ReactNode;
   hideBackButton?: boolean;
+  backButtonFallback?: () => void;
 } & BoxProps;
 
 const HEADER_HEIGHT = 60;
@@ -16,6 +17,7 @@ export const ContainerHeader = ({
   title,
   hideBackButton = false,
   children,
+  backButtonFallback,
   ...props
 }: ContainerHeaderProps) => {
   const insets = useSafeAreaInsets();
@@ -28,13 +30,13 @@ export const ContainerHeader = ({
       flexDirection="row"
       alignItems="center"
       width={Dimensions.get("window").width}
-      backgroundColor="backgroundLight"
+      backgroundColor="transparent"
       gap="m"
       px="l"
       justifyContent="space-between"
       {...props}
     >
-      {!hideBackButton && <BackButton />}
+      {!hideBackButton && <BackButton fallback={backButtonFallback} />}
       {title && (
         <Text variant="containerHeader" flex={1}>
           {title}

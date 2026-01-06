@@ -21,7 +21,7 @@ export default function InitialMessage() {
     <Container variant="screen">
       <StepHeader
         title="Escreva a sua mensagem inicial"
-        subtitle="Informe aqui o motivo do seu contato com o residente"
+        subtitle="Informe aqui o motivo do seu contato com o usuário"
       />
       <MessageOptions
         messageSelected={messageSelected}
@@ -30,12 +30,14 @@ export default function InitialMessage() {
       <TextInput
         value={messageSelected}
         autoFocus
-        placeholder="Ex.: Entrega de comida"
+        placeholder="Ex.: Ola, gostaria de saber mais sobre..."
         minHeight={120}
         onEndEditing={({ nativeEvent }) => setMessageSelected(nativeEvent.text)}
         multiline
       />
       <Button
+        alignSelf="center"
+        variant="primary"
         text="Continuar"
         marginTop="xl"
         onPress={() => handleSubmit()}

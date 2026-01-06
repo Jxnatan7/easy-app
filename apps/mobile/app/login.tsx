@@ -23,7 +23,10 @@ export default function Login() {
   };
 
   return (
-    <Container variant="screen">
+    <Container
+      variant="screen"
+      containerHeaderProps={{ backButtonFallback: () => push("/init") }}
+    >
       <Text variant="header" mt="xxxl">
         Faça o seu Login
       </Text>
@@ -40,17 +43,19 @@ export default function Login() {
           placeholder="seu-melhor@emai.com"
           keyboardType="email-address"
           autoFocus
+          containerProps={{ paddingHorizontal: "m" }}
         />
         <FormTextInput
           name="password"
           placeholder="*********"
           label="Senha"
           secureTextEntry
-          containerProps={{ marginTop: "m" }}
+          containerProps={{ marginTop: "m", paddingHorizontal: "m" }}
         />
-        <FormButton text="Continuar" marginTop="xxxl" />
+        <FormButton variant="primary" text="Continuar" marginTop="xxxl" />
       </Form>
       <Button
+        alignSelf="center"
         variant="secondary"
         text="Criar Conta"
         marginTop="s"

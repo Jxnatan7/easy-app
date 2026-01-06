@@ -1,4 +1,11 @@
-import { Body, Controller, Param, Post, UseGuards } from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  HttpCode,
+  Param,
+  Post,
+  UseGuards,
+} from "@nestjs/common";
 import { AuthGuard } from "@nestjs/passport";
 import {
   FilterRequest,
@@ -11,6 +18,7 @@ import { MessageService } from "src/message/core/services/message.service";
 export class MessageController {
   constructor(private readonly messageService: MessageService) {}
 
+  @HttpCode(200)
   @Post(":chatId")
   @UseGuards(AuthGuard("jwt"))
   async getMessages(

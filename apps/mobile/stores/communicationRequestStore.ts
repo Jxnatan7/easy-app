@@ -13,6 +13,7 @@ export type CommunicationRequestState = {
   isLoading: boolean;
   error: string | null;
   communicationRequestId: string | null;
+  isAwaitingResponse: boolean;
   getPayload: () => {
     userId: string;
     initialMessage: string;
@@ -23,6 +24,7 @@ export type CommunicationRequestState = {
   setCode: (code: string) => void;
   setInitialMessage: (message: string) => void;
   setUser: (user: Partial<User>) => void;
+  setIsAwaitingResponse: (state: boolean) => void;
   clearAppData: () => void;
 };
 
@@ -36,6 +38,7 @@ const INITIAL_STATE: Partial<CommunicationRequestState> = {
   visitorToken: null,
   isLoading: false,
   error: null,
+  isAwaitingResponse: false,
 };
 
 export const useCommunicationRequestStore = create<CommunicationRequestState>()(
@@ -50,6 +53,7 @@ export const useCommunicationRequestStore = create<CommunicationRequestState>()(
       visitorToken: null,
       isLoading: false,
       error: null,
+      isAwaitingResponse: false,
       getPayload: () => ({
         userId: get().user?.id ?? "",
         initialMessage: get().initialMessage ?? "",
@@ -60,12 +64,15 @@ export const useCommunicationRequestStore = create<CommunicationRequestState>()(
           visitorId: response.visitorId,
           visitorToken: response.visitorToken,
           communicationRequestId: response.id,
+          isAwaitingResponse: true,
         });
       },
       setCode: (code: string) => set({ code }),
       setInitialMessage: (message: string) => set({ initialMessage: message }),
       setVisitorName: (name: string) => set({ visitorName: name }),
       setUser: (user: Partial<User>) => set({ user }),
+      setIsAwaitingResponse: (state: boolean) =>
+        set({ isAwaitingResponse: state }),
       clearAppData: () => set({ ...get(), ...INITIAL_STATE }),
     }),
     {

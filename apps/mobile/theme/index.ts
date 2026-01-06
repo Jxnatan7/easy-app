@@ -11,6 +11,7 @@ const lightColors = {
   inputText: pallete.inputTextLight,
   backgroundGradient0: pallete.gradientLight0,
   backgroundGradient1: pallete.gradientLight1,
+  myMessageBackground: pallete.buttonBackgroundLight,
 };
 
 const darkColors: typeof lightColors = {
@@ -23,6 +24,7 @@ const darkColors: typeof lightColors = {
   inputText: pallete.inputTextDark,
   backgroundGradient0: pallete.gradientDark0,
   backgroundGradient1: pallete.gradientDark1,
+  myMessageBackground: pallete.buttonBackgroundDark,
 };
 
 const theme = createTheme({
@@ -68,14 +70,14 @@ const theme = createTheme({
       height: 40,
       p: "s",
       borderRadius: 4,
-      backgroundColor: "textBlue",
+      backgroundColor: "mainBackground",
     },
     defaults: {
       flex: 1,
       p: "m",
       pt: "xl",
       alignItems: "center",
-      backgroundColor: "mainBackground",
+      backgroundColor: "transparent",
     },
     chat: {
       flex: 1,
@@ -83,14 +85,14 @@ const theme = createTheme({
       pt: "xl",
       pb: "none",
       alignItems: "center",
-      backgroundColor: "backgroundGrayLight",
+      backgroundColor: "transparent",
     },
     screen: {
       flex: 1,
       p: "m",
       pt: "xl",
       alignItems: "center",
-      backgroundColor: "mainBackground",
+      backgroundColor: "transparent",
     },
   },
   boxVariants: {
@@ -124,7 +126,7 @@ const theme = createTheme({
       justifyContent: "center",
       p: "s",
       borderRadius: 4,
-      backgroundColor: "backgroundGrayLight",
+      backgroundColor: "mainBackground",
       mr: "s",
     },
     default: {
@@ -234,10 +236,12 @@ const theme = createTheme({
       color: "error",
     },
     label: {
+      color: "mainText",
       fontFamily: "MulishFontMedium",
       fontSize: 14,
     },
     header2: {
+      color: "mainText",
       fontFamily: "MulishFontMedium",
       fontSize: 16,
       lineHeight: 24,
@@ -253,6 +257,7 @@ const theme = createTheme({
       lineHeight: 24,
     },
     containerHeader: {
+      color: "mainText",
       fontFamily: "MulishFontBold",
       fontSize: 24,
     },
@@ -291,8 +296,23 @@ const theme = createTheme({
       },
       lineHeight: 24,
     },
+    messageOption: {
+      fontFamily: "MulishFontMedium",
+      color: "textLight",
+      fontSize: {
+        smallPhone: 14,
+        phone: 16,
+      },
+      lineHeight: 24,
+    },
     defaults: {},
     infoTitle: {
+      color: "mainText",
+      fontFamily: "MulishFontBold",
+      fontSize: 16,
+    },
+    listItemTitle: {
+      color: "textLight",
       fontFamily: "MulishFontBold",
       fontSize: 16,
     },
@@ -375,7 +395,7 @@ const theme = createTheme({
   },
   flashListVariants: {
     messages: {
-      backgroundColor: "backgroundGrayLight",
+      backgroundColor: "transparent",
       width: "100%",
       maxHeight: 800,
     },
@@ -387,7 +407,7 @@ const theme = createTheme({
     },
     messageOptions: {
       width: "100%",
-      backgroundColor: "backgroundLight",
+      backgroundColor: "transparent",
       height: 40,
       maxHeight: 40,
     },

@@ -11,14 +11,16 @@ export type CommunicationRequestListProps = Omit<
   "data"
 > & {
   renderItem: any;
+  search?: string;
 };
 
 export const CommunicationRequestList = ({
   renderItem,
+  search,
   ...props
 }: CommunicationRequestListProps) => {
   const { user, fetchRequests, newRequests } =
-    useCommunicationRequestController();
+    useCommunicationRequestController(search);
 
   const renderNewRequestsHeader = useCallback(() => {
     if (newRequests.length === 0) return null;
@@ -44,6 +46,7 @@ export const CommunicationRequestList = ({
   return (
     <PaginatedFlashList<RequestItem>
       {...props}
+      style={{ alignSelf: "center", backgroundColor: "transparent" }}
       renderItem={renderItem}
       fetchData={fetchRequests}
       pageSize={10}

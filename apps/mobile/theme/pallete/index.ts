@@ -44,6 +44,10 @@ const pallete = {
 
   myMessageBackground: "#0053e3ff",
   otherMessageBackground: "#FFF",
+  myMessageBackgroundLight: "#0053e3ff",
+  otherMessageBackgroundLight: "#FFF",
+  myMessageBackgroundDark: "#0053e3ff",
+  otherMessageBackgroundDark: "#FFF",
 
   myMessageColor: "#FFF",
   otherMessageColor: "#000",

@@ -1,4 +1,11 @@
-import { Controller, Post, Body, Param, UseGuards } from "@nestjs/common";
+import {
+  Controller,
+  Post,
+  Body,
+  Param,
+  UseGuards,
+  HttpCode,
+} from "@nestjs/common";
 import { CommunicationRequestService } from "src/communication-request/core/services/communication-request.service";
 import { CreateCommunicationRequestDto } from "src/communication-request/http/rest/dto/create-communication-request.dto";
 import { CommunicationRequestDto } from "../dto/communication-request.dto";
@@ -28,6 +35,7 @@ export class CommunicationRequestController {
     );
   }
 
+  @HttpCode(200)
   @Post(":id/validate")
   async validate(
     @Param("id") id: string,
@@ -39,6 +47,7 @@ export class CommunicationRequestController {
     );
   }
 
+  @HttpCode(200)
   @Post("/search/:userId")
   async listByUserId(
     @Param("userId") userId: string,

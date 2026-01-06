@@ -6,7 +6,7 @@ import { PaginatedResult } from "@/components/theme/PaginatedFlashList";
 
 type RequestItem = any;
 
-export function useCommunicationRequestController() {
+export function useCommunicationRequestController(search?: string) {
   const userToken = useAuthStore((s) => s.token);
   const user = useAuthStore((s) => s.user);
 
@@ -36,12 +36,13 @@ export function useCommunicationRequestController() {
         payload: {
           page,
           pageSize,
+          q: search,
         },
       });
 
       return response;
     },
-    [user?.id, mutateAsync, clearNewRequests]
+    [user?.id, mutateAsync, clearNewRequests, search]
   );
 
   return {

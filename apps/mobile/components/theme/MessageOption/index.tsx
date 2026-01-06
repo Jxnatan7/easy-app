@@ -20,7 +20,7 @@ export const MessageOption = ({
       disabled={disabled}
       variant={disabled ? "chipDisabled" : "chip"}
     >
-      <Text variant="body" numberOfLines={1}>
+      <Text variant="messageOption" numberOfLines={1}>
         {option}
       </Text>
     </Chip>

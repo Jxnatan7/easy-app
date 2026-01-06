@@ -46,7 +46,13 @@ export function FormTextInput({ name, ...rest }: FormInputProps) {
         {...rest}
       />
       {errorMessage && (
-        <Text maxWidth={450} mt="s" variant="label-error" color="error">
+        <Text
+          maxWidth={450}
+          mt="s"
+          variant="label-error"
+          color="error"
+          paddingHorizontal="m"
+        >
           {errorMessage}
         </Text>
       )}
@@ -58,11 +64,17 @@ type FormSubmitProps = React.ComponentProps<typeof Button> & {
   text: string;
 };
 
-export function FormButton({ text, disabled, ...rest }: FormSubmitProps) {
+export function FormButton({
+  text,
+  disabled,
+  variant = "primary",
+  ...rest
+}: FormSubmitProps) {
   const { handleSubmit, isSubmitting } = useFormikContext();
 
   return (
     <Button
+      variant={variant}
       text={text}
       onPress={() => handleSubmit()}
       disabled={isSubmitting || disabled}

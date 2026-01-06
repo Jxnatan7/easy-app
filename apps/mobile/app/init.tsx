@@ -11,9 +11,22 @@ export default function App() {
   const token = useAuthStore((s) => s.token);
   const chatId = useAppStore((s) => s.chatId);
   const visitorToken = useCommunicationRequestStore((s) => s.visitorToken);
+  const isAwaitingResponse = useCommunicationRequestStore(
+    (s) => s.isAwaitingResponse
+  );
 
   if (token) {
     return <Redirect href="/(tabs)/user" />;
+  }
+
+  if (visitorToken && isAwaitingResponse) {
+    return (
+      <Redirect
+        href={{
+          pathname: "/awaiting-validation",
+        }}
+      />
+    );
   }
 
   if (visitorToken && chatId) {
@@ -34,8 +47,8 @@ export default function App() {
 
   return (
     <Container variant="screen" hideHeader>
-      <Box flex={1} justifyContent="flex-end" mb="xl">
-        <Text variant="header" textAlign="center" mb="l">
+      <Box flex={1} justifyContent="flex-end" alignItems="center" mb="xl">
+        <Text variant="header" mb="l">
           Easy - App
         </Text>
         <PlanetAnimation />

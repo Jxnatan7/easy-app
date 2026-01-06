@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { StyleSheet, Dimensions } from "react-native";
+import { Dimensions } from "react-native";
 import { useRouter } from "expo-router";
 import { CommunicationRequestItem } from "@/components/theme/CommunicationRequestItem";
 import { CommunicationRequestList } from "@/components/theme/CommunicationRequestList";
@@ -7,11 +7,17 @@ import { Container } from "@/components/theme/Container";
 import { SearchInput } from "@/components/theme/SearchInput";
 import useValidateCommunication from "@/hooks/useValidateCommunication";
 import { ActionModal } from "@/components/theme/ActionModal";
+import { useDebounce } from "@/hooks/useDebounce";
 
 const { width } = Dimensions.get("window");
 
 export default function Home() {
   const { push } = useRouter();
+
+  const [searchText, setSearchText] = useState("");
+  const { debouncedFn: handleSearch } = useDebounce((text: string) => {
+    setSearchText(text);
+  }, 500);
 
   const [selectedRequestId, setSelectedRequestId] = useState<string | null>(
     null
@@ -43,11 +49,15 @@ export default function Home() {
       variant="screen"
       containerHeaderProps={{ title: "Conversas", hideBackButton: true }}
     >
-      <SearchInput containerProps={{ mb: "m", mt: "l" }} />
+      <SearchInput
+        onChangeText={handleSearch}
+        containerProps={{ mb: "m", mt: "l", alignSelf: "center" }}
+      />
 
       <CommunicationRequestList
-        key={refreshKey}
+        key={`${refreshKey}-${searchText}`}
         keyExtractor={(item: any) => item._id}
+        search={searchText}
         renderItem={({ item }: any) => (
           <CommunicationRequestItem
             key={item._id}
@@ -56,13 +66,14 @@ export default function Home() {
             onPress={() =>
               item.status === "PENDING"
                 ? setSelectedRequestId(item._id)
-                : item.status === "ACCEPTED" &&
+                : (item.status === "ACCEPTED" || item.status === "FINALIZED") &&
                   push({
                     pathname: "/chat",
                     params: {
                       chatId: item.chatId,
                       visitorName: item.visitorName,
                       communicationRequestId: item._id,
+                      status: item.status,
                     },
                   })
             }
@@ -84,57 +95,3 @@ export default function Home() {
     </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  overlay: {
-    flex: 1,
-    backgroundColor: "rgba(0,0,0,0.5)",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  modalContainer: {
-    width: width * 0.85,
-    backgroundColor: "white",
-    borderRadius: 16,
-    padding: 24,
-    alignItems: "center",
-    elevation: 5,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-  },
-  actionRow: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    width: "100%",
-    gap: 12,
-    marginBottom: 16,
-  },
-  button: {
-    flex: 1,
-    paddingVertical: 12,
-    borderRadius: 8,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  rejectButton: {
-    backgroundColor: "#EF4444",
-  },
-  confirmButton: {
-    backgroundColor: "#000",
-  },
-  buttonText: {
-    color: "#FFFFFF",
-    fontWeight: "600",
-  },
-  cancelButton: {
-    paddingVertical: 8,
-    width: "100%",
-    alignItems: "center",
-  },
-  cancelButtonText: {
-    color: "#6B7280",
-    fontWeight: "500",
-  },
-});

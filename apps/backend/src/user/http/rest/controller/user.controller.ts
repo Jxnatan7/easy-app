@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  HttpCode,
   Param,
   Post,
   Put,
@@ -26,11 +27,13 @@ export class UserController {
     return SimpleUser.createFromUser(user);
   }
 
+  @HttpCode(200)
   @Get("/:id")
   async findById(@Param("id") id: string) {
     return this.userService.findById(id);
   }
 
+  @HttpCode(200)
   @Public()
   @Get("code/:code")
   async findByCode(@Param("code") code: string) {

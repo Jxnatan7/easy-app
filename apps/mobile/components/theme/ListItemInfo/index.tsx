@@ -9,7 +9,7 @@ export const ListItemInfo = ({
 }) => {
   return (
     <Box flex={1} flexDirection="column" gap="s">
-      <Text variant="infoTitle">{title}</Text>
+      <Text variant="listItemTitle">{title}</Text>
       {typeof subtitle === "string" ? (
         <Text variant="infoSubtitle">{subtitle}</Text>
       ) : (
