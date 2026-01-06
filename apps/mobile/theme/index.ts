@@ -1,6 +1,30 @@
 import { createTheme } from "@shopify/restyle";
 import pallete from "./pallete";
 
+const lightColors = {
+  ...pallete,
+  mainBackground: pallete.backgroundLight,
+  mainTitle: pallete.titleLight,
+  mainText: pallete.textLight,
+  buttonBackground: pallete.buttonBackgroundLight,
+  inputBackground: pallete.inputBackgroundLight,
+  inputText: pallete.inputTextLight,
+  backgroundGradient0: pallete.gradientLight0,
+  backgroundGradient1: pallete.gradientLight1,
+};
+
+const darkColors: typeof lightColors = {
+  ...pallete,
+  mainBackground: pallete.backgroundDark,
+  mainTitle: pallete.titleDark,
+  mainText: pallete.textDark,
+  buttonBackground: pallete.buttonBackgroundDark,
+  inputBackground: pallete.inputBackgroundDark,
+  inputText: pallete.inputTextDark,
+  backgroundGradient0: pallete.gradientDark0,
+  backgroundGradient1: pallete.gradientDark1,
+};
+
 const theme = createTheme({
   breakpoints: {
     smallPhone: 0,
@@ -8,7 +32,7 @@ const theme = createTheme({
     tablet: 768,
     desktop: 1024,
   },
-  colors: pallete,
+  colors: lightColors,
   spacing: {
     none: 0,
     xs: 4,
@@ -51,7 +75,7 @@ const theme = createTheme({
       p: "m",
       pt: "xl",
       alignItems: "center",
-      backgroundColor: "backgroundLight",
+      backgroundColor: "mainBackground",
     },
     chat: {
       flex: 1,
@@ -66,20 +90,20 @@ const theme = createTheme({
       p: "m",
       pt: "xl",
       alignItems: "center",
-      backgroundColor: "backgroundLight",
+      backgroundColor: "mainBackground",
     },
   },
   boxVariants: {
     screen: {
       flex: 1,
-      backgroundColor: "backgroundLight",
+      backgroundColor: "mainBackground",
     },
   },
   pressableVariants: {
     input: {
       fontFamily: "MulishFont",
       backgroundColor: "inputBackgroundLight",
-      color: "inputTextLight",
+      color: "inputBackground",
       flex: 1,
       width: "100%",
       minHeight: 40,
@@ -151,7 +175,7 @@ const theme = createTheme({
       height: 50,
     },
     default: {
-      backgroundColor: "buttonBackgroundLight",
+      backgroundColor: "buttonGradientPrimary1",
       color: "buttonTextLight",
       alignItems: "center",
       justifyContent: "center",
@@ -177,12 +201,14 @@ const theme = createTheme({
       },
     },
     primary: {
-      backgroundColor: "buttonBackgroundLight",
+      backgroundColor: "buttonGradientPrimary1",
       color: "buttonTextLight",
+      borderRadius: 30,
     },
     secondary: {
-      backgroundColor: "buttonBackgroundGray",
+      backgroundColor: "buttonGradientSecondary1",
       color: "buttonTextDark",
+      borderRadius: 30,
     },
     cameraOption: {
       width: {
@@ -239,6 +265,7 @@ const theme = createTheme({
       color: "buttonTextLight",
     },
     header: {
+      color: "mainText",
       fontFamily: "MulishFontBold",
       fontSize: {
         smallPhone: 20,
@@ -246,8 +273,18 @@ const theme = createTheme({
       },
       textAlign: "center",
     },
+    "sub-header": {
+      color: "mainText",
+      fontFamily: "MulishFontBold",
+      fontSize: {
+        smallPhone: 18,
+        phone: 24,
+      },
+      textAlign: "center",
+    },
     body: {
       fontFamily: "MulishFontMedium",
+      color: "mainText",
       fontSize: {
         smallPhone: 14,
         phone: 16,
@@ -366,7 +403,20 @@ const theme = createTheme({
       height: "100%",
     },
   },
+  buttonGradients: {
+    primary: ["buttonGradientPrimary0", "buttonGradientPrimary1"],
+    secondary: ["buttonGradientSecondary0", "buttonGradientSecondary1"],
+    red: ["finish", "finish"],
+    default: ["gradientLight0", "gradientLight1"],
+    transparent: ["transparent", "transparent"],
+  },
 });
 
 export type Theme = typeof theme;
+
+export const darkTheme: Theme = {
+  ...theme,
+  colors: darkColors,
+};
+
 export default theme;

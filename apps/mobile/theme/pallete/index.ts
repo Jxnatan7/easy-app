@@ -54,6 +54,16 @@ const pallete = {
   pending: "#ff872bff",
   accepted: "#0053e3ff",
   rejected: "#FF0000",
+
+  gradientDark1: "#020101",
+  gradientDark0: "#666666",
+  gradientLight1: "#999999",
+  gradientLight0: "#FFFFFF",
+
+  buttonGradientPrimary1: "#4B5788",
+  buttonGradientPrimary0: "#8490BF",
+  buttonGradientSecondary1: "#999999",
+  buttonGradientSecondary0: "#FFFFFF",
 };
 
 export default pallete;

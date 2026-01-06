@@ -1,7 +1,7 @@
 import { Box, Text } from "@/components/restyle";
 import Button from "@/components/theme/Button";
 import { Container } from "@/components/theme/Container";
-import { Image } from "@/components/theme/Image";
+import { PlanetAnimation } from "@/components/theme/PlanetAnimation";
 import { useAppStore } from "@/stores/appStore";
 import { useAuthStore } from "@/stores/authStore";
 import { useCommunicationRequestStore } from "@/stores/communicationRequestStore";
@@ -34,46 +34,34 @@ export default function App() {
 
   return (
     <Container variant="screen" hideHeader>
-      <Image
-        source={require("@/assets/images/init-image.svg")}
-        variant="init"
-        contentFit="cover"
-        cachePolicy="memory"
-      />
-      <Box
-        width="100%"
-        alignItems="center"
-        justifyContent="center"
-        flexDirection="row"
-        px="l"
-        mt={{
-          smallPhone: "l",
-          phone: "xl",
-        }}
-        mb="xl"
-      >
-        <Text
-          variant="header"
-          textAlign="center"
-          flex={1}
-          px="s"
-          maxWidth={600}
-        >
-          Conecte-se de forma simples e rápida com qualquer pessoa.
+      <Box flex={1} justifyContent="flex-end" mb="xl">
+        <Text variant="header" textAlign="center" mb="l">
+          Easy - App
         </Text>
+        <PlanetAnimation />
+        <Box
+          width="100%"
+          alignItems="center"
+          justifyContent="center"
+          flexDirection="row"
+          px="l"
+          mb="xl"
+        >
+          <Text
+            variant="sub-header"
+            textAlign="center"
+            flex={1}
+            px="s"
+            maxWidth={600}
+          >
+            Foque no seu negócio, a estrutura nós já construímos.
+          </Text>
+        </Box>
       </Box>
 
-      <Box
-        width="100%"
-        flex={1}
-        alignItems="center"
-        justifyContent="flex-end"
-        mb="m"
-      >
-        <Text variant="body" textAlign="center" px="s">
-          Termos e Política de Privacidade
-        </Text>
+      <Box width="100%" alignItems="center" justifyContent="flex-end" pb="xl">
         <Button
+          variant="primary"
           text="Começar a conversar"
           marginVertical="s"
           onPress={() => {
