@@ -113,6 +113,7 @@ export class ChatGateway
       return;
     }
     this.server.to(room).emit("update_communication_request", requestData);
+    this.handleFinishChat(requestData.chatId);
     this.logger.log(`Notification sent to ${room}`);
   }
 
@@ -262,6 +263,14 @@ export class ChatGateway
     } else {
       client.emit("leave_error", "Not in room");
     }
+  }
+
+  async handleFinishChat(chatId: string) {
+    const room = this.roomName(chatId);
+
+    this.server.to(room).emit("onChat", {
+      action: "FINISHED",
+    });
   }
 
   @SubscribeMessage("message")

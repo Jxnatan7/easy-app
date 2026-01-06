@@ -22,6 +22,7 @@ export function useChatController(chatId: string) {
     messages: liveMessages,
     sendMessage,
     status,
+    chatStatus,
   } = useChatSocket({
     chatId,
     token: activeToken,
@@ -40,5 +41,6 @@ export function useChatController(chatId: string) {
     isLoading: oldMessagesQuery.isPending,
     communicationRequestId: visitorCommunicationRequestId,
     isVisitor: currentUserId === visitorId,
+    chatStatus,
   };
 }

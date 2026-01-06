@@ -25,6 +25,8 @@ import { ActionModal } from "@/components/theme/ActionModal";
 import useValidateCommunication from "@/hooks/useValidateCommunication";
 import { useQueryClient } from "@tanstack/react-query";
 import { useLogout } from "@/hooks/useLogout";
+import { useCommunicationRequestStore } from "@/stores/communicationRequestStore";
+import { ThemeButton } from "@/components/theme/ThemeButton";
 
 export default function ChatScreen() {
   const {
@@ -127,19 +129,43 @@ export default function ChatScreen() {
     }
   }, [messages]);
 
+  useEffect(() => {
+    if (chatController.chatStatus === "FINISHED") {
+      if (isVisitor) {
+        logout();
+        if (canDismiss()) {
+          dismissAll();
+        }
+        replace("/init");
+        return;
+      }
+      replace("/(tabs)");
+    }
+  }, [chatController.chatStatus]);
+
   return (
     <>
       <Container
         variant="chat"
         containerHeaderProps={{
-          title: visitorName || "Chat",
+          title:
+            visitorName ||
+            useCommunicationRequestStore.getState().user?.name ||
+            "Chat",
           hideBackButton: isBackBlocked,
           backButtonFallback: () => push("/(tabs)"),
-          children: status !== "FINALIZED" && (
-            <IconButton
-              icon={<FontAwesome5 name="ellipsis-v" size={24} color="black" />}
-              onPress={() => setIsOpen(true)}
-            />
+          children: (
+            <>
+              {isVisitor && <ThemeButton />}
+              {status !== "FINALIZED" && (
+                <IconButton
+                  icon={
+                    <FontAwesome5 name="ellipsis-v" size={24} color="black" />
+                  }
+                  onPress={() => setIsOpen(true)}
+                />
+              )}
+            </>
           ),
         }}
       >

@@ -1,5 +1,15 @@
 # 🚀 Easy App - Fullstack Monorepo Template
 
+### [PT](https://github.com/Jxnatan7/easy-app)
+
+### [EN](https://github.com/Jxnatan7/easy-app/README-en.md)
+
+### [ES](https://github.com/Jxnatan7/easy-app/README-es.md)
+
+### [ZH](https://github.com/Jxnatan7/easy-app/README-zh.md)
+
+### [HI](https://github.com/Jxnatan7/easy-app/README-hi.md)
+
 O **Easy App** é um ecossistema completo e opinativo para o desenvolvimento acelerado de aplicações cross-platform. Ele utiliza uma arquitetura de monorepositório para unificar um backend robusto em **NestJS** com um frontend versátil em **Expo (React Native)**.
 
 O objetivo principal é eliminar a configuração inicial repetitiva, entregando de imediato funcionalidades críticas como **Autenticação JWT**, **Chat em tempo real via WebSockets** e **Arquitetura Modular**, permitindo que você foque apenas na regra de negócio do seu produto.

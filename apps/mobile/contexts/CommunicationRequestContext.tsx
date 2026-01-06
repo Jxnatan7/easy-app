@@ -12,10 +12,10 @@ export const CommunicationRequestProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const store = useCommunicationRequestStore.getState();
+  const store = useCommunicationRequestStore();
 
   const storeContext = useMemo(() => {
-    return store;
+    return { ...store };
   }, [store]);
 
   return (

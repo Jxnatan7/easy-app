@@ -44,6 +44,7 @@ export default function useChatSocket({
   const [status, setStatus] = useState<ConnectionStatus>("disconnected");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [participants, setParticipants] = useState<Participant[]>([]);
+  const [chatStatus, setChatStatus] = useState<string>("");
 
   const chatIdRef = useRef<string | null>(chatId ?? null);
   useEffect(() => {
@@ -123,11 +124,17 @@ export default function useChatSocket({
       safeSetStatus("disconnected");
     };
 
+    const handleChatStatus = (res: { action: string }) => {
+      if (!mountedRef.current) return;
+      setChatStatus(res.action);
+    };
+
     socket.on("connect", handleConnect);
     socket.on("joined", handleJoined);
     socket.on("participant_joined", handleParticipantJoined);
     socket.on("participant_left", handleParticipantLeft);
     socket.on("message", handleMessage);
+    socket.on("onChat", handleChatStatus);
     socket.on("connect_error", handleConnectError);
     socket.on("disconnect", handleDisconnect);
 
@@ -138,6 +145,7 @@ export default function useChatSocket({
         socket.off("participant_joined", handleParticipantJoined);
         socket.off("participant_left", handleParticipantLeft);
         socket.off("message", handleMessage);
+        socket.off("onChat", handleChatStatus);
         socket.off("connect_error", handleConnectError);
         socket.off("disconnect", handleDisconnect);
         socket.disconnect();
@@ -172,8 +180,6 @@ export default function useChatSocket({
         });
 
         resolve({ ok: true });
-
-        // setTimeout(() => resolve({ok: true}), 1000);
       } catch (err) {
         reject(err);
       }
@@ -188,6 +194,7 @@ export default function useChatSocket({
     status,
     sendMessage,
     clearMessages,
+    chatStatus,
     socket: socketRef.current,
   };
 }
