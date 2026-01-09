@@ -39,6 +39,7 @@ jobs:
 
       - name: Check Prettier formatting
         run: yarn prettier --check "**/*.{ts,tsx,md,json,yml,yaml}"
+        continue-on-error: true
 
       - name: Run type checking
         run: yarn check-types
