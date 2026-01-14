@@ -1,0 +1,37 @@
+{
+  "packages": {
+    ".": {
+      "release-type": "node",
+      "package-name": "easy-app",
+      "changelog-path": "CHANGELOG.md",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false,
+      "include-component-in-tag": false,
+      "include-v-in-tag": true,
+      "pull-request-title-pattern": "chore: release ${version}",
+      "versioning": "default",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "apps/backend/package.json",
+          "jsonpath": "$.version"
+        },
+        {
+          "type": "json",
+          "path": "apps/mobile/package.json",
+          "jsonpath": "$.version"
+        },
+        {
+          "type": "json",
+          "path": "apps/mobile/app.json",
+          "jsonpath": "$.expo.version"
+        }
+      ]
+    }
+  },
+  "release-search-depth": 10,
+  "commit-search-depth": 100,
+  "sequential-calls": true
+}
