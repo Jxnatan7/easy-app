@@ -1885,6 +1885,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@expo/vector-icons@npm:^15.1.1":
+  version: 15.1.1
+  resolution: "@expo/vector-icons@npm:15.1.1"
+  peerDependencies:
+    expo-font: ">=14.0.4"
+    react: "*"
+    react-native: "*"
+  checksum: 10c0/fdd50c90484934204b90d345904fa69ca788a5de704d62b3cb580c52aa4cf4bffe1c05c509d043cf2b6842f1bdad6b78585524f3c6ae5f77e36385d83c0aa577
+  languageName: node
+  linkType: hard
+
 "@expo/ws-tunnel@npm:^1.0.1":
   version: 1.0.6
   resolution: "@expo/ws-tunnel@npm:1.0.6"
@@ -2562,21 +2573,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lottiefiles/dotlottie-react@npm:^0.18.0":
-  version: 0.18.0
-  resolution: "@lottiefiles/dotlottie-react@npm:0.18.0"
+"@lottiefiles/dotlottie-react@npm:^0.18.2":
+  version: 0.18.2
+  resolution: "@lottiefiles/dotlottie-react@npm:0.18.2"
   dependencies:
-    "@lottiefiles/dotlottie-web": "npm:0.64.0"
+    "@lottiefiles/dotlottie-web": "npm:0.64.2"
   peerDependencies:
     react: ^17 || ^18 || ^19
-  checksum: 10c0/3840fe0fe01e90c31869cfb7ee21b9c05bb997e1ec1398ffe4e0c7a431738d01a0f825962dfe98d1a487453357cc79859d01787609b2573f83981b5cdd925eb1
+  checksum: 10c0/c51b57409bb5d397ec068da6e002d92aff5e316ff909f9f6765131ce837008696b1a70bdf7599fbce6b453e5ac7a5e4849792a07816e7798c233929e999a7d2a
   languageName: node
   linkType: hard
 
-"@lottiefiles/dotlottie-web@npm:0.64.0":
-  version: 0.64.0
-  resolution: "@lottiefiles/dotlottie-web@npm:0.64.0"
-  checksum: 10c0/6b7eee2d75ed88fecc32cf44de8cb8572597d4a4f63546c218fd77bced1a561fdfeb46f8008cd8470661906079f193d7f832788354251886e6f55d9e3280d245
+"@lottiefiles/dotlottie-web@npm:0.64.2":
+  version: 0.64.2
+  resolution: "@lottiefiles/dotlottie-web@npm:0.64.2"
+  checksum: 10c0/cd1bbd6f6af4563e0712c3d990ae0f8c96c966487db080cf77283ffdf9a9a6871ce054ad16c98ce85a6613fcf72184570d5843b14401fda24e1cff2c851dc013
   languageName: node
   linkType: hard
 
@@ -2651,9 +2662,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/common@npm:^11.1.13":
-  version: 11.1.13
-  resolution: "@nestjs/common@npm:11.1.13"
+"@nestjs/common@npm:^11.1.14":
+  version: 11.1.14
+  resolution: "@nestjs/common@npm:11.1.14"
   dependencies:
     file-type: "npm:21.3.0"
     iterare: "npm:1.2.1"
@@ -2670,7 +2681,7 @@ __metadata:
       optional: true
     class-validator:
       optional: true
-  checksum: 10c0/1e726347c9adbb0ba124ee0745c297b97819ee5efd3419130746ba49e867484d0f33d9300844859b683de980436efd4b910e9ba80dadfa144a416b9388ac5183
+  checksum: 10c0/bba35fabdc350dfd362009e15a2cb6b660a53325ee6c1863f04667df0201b51b334226ace2985505969727aaf5b494396dd33f682ce75d0f3b1cab1d206a11e9
   languageName: node
   linkType: hard
 
@@ -2688,9 +2699,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/core@npm:^11.1.13":
-  version: 11.1.13
-  resolution: "@nestjs/core@npm:11.1.13"
+"@nestjs/core@npm:^11.1.14":
+  version: 11.1.14
+  resolution: "@nestjs/core@npm:11.1.14"
   dependencies:
     "@nuxt/opencollective": "npm:0.4.1"
     fast-safe-stringify: "npm:2.1.1"
@@ -2712,7 +2723,7 @@ __metadata:
       optional: true
     "@nestjs/websockets":
       optional: true
-  checksum: 10c0/1cc791554595eb690d44a44a2f8248c495698d2b2c9dbd0faff521c612549535b68504b51e300dd9e71dce986218aeec181061a892d4a02d944d50d197d4e7bf
+  checksum: 10c0/842c8048fb83bc6df70975d91ec357bacb6d2cc42791e709d122fda16c6343d279cf9f4ec88c5427b02de5c3f40f3271b9c62367c662c39cdad838b5962669e9
   languageName: node
   linkType: hard
 
@@ -2762,9 +2773,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/platform-express@npm:^11.1.13":
-  version: 11.1.13
-  resolution: "@nestjs/platform-express@npm:11.1.13"
+"@nestjs/platform-express@npm:^11.1.14":
+  version: 11.1.14
+  resolution: "@nestjs/platform-express@npm:11.1.14"
   dependencies:
     cors: "npm:2.8.6"
     express: "npm:5.2.1"
@@ -2774,13 +2785,13 @@ __metadata:
   peerDependencies:
     "@nestjs/common": ^11.0.0
     "@nestjs/core": ^11.0.0
-  checksum: 10c0/18b90f1348a63f307b0cc72dfad779ac28bc0715b4d3643bcd685ffe953205f93ec9bde3507194bc85b3acaf188ddb9fc799eacc0a0510325ac57705ed112f30
+  checksum: 10c0/52b12606cafae3fc25ef74cca785ba797b826cbdf56a8a989cb21402cba360d14299b3b49ed453515f3a0d43927ec4203416a30d980a1db9fcffdafe8d76e728
   languageName: node
   linkType: hard
 
-"@nestjs/platform-socket.io@npm:^11.1.13":
-  version: 11.1.13
-  resolution: "@nestjs/platform-socket.io@npm:11.1.13"
+"@nestjs/platform-socket.io@npm:^11.1.14":
+  version: 11.1.14
+  resolution: "@nestjs/platform-socket.io@npm:11.1.14"
   dependencies:
     socket.io: "npm:4.8.3"
     tslib: "npm:2.8.1"
@@ -2788,7 +2799,7 @@ __metadata:
     "@nestjs/common": ^11.0.0
     "@nestjs/websockets": ^11.0.0
     rxjs: ^7.1.0
-  checksum: 10c0/0b89536f692a83296627672fc3fe16ae8df39fb88966f37a404cad32633447fed23e36d97efc354b1390e95b055b9c9482815a80963150d2d5d34c4353e77fa9
+  checksum: 10c0/0e8bb66594fa1aacc60d1757ce6dcfae9b2ae04e77328f16443584bd9d242ea7ef8bb83c58bfa526be42b7b72a16f4eea72823270210d4702140348aecb554c0
   languageName: node
   linkType: hard
 
@@ -2826,9 +2837,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/websockets@npm:^11.1.13":
-  version: 11.1.13
-  resolution: "@nestjs/websockets@npm:11.1.13"
+"@nestjs/websockets@npm:^11.1.14":
+  version: 11.1.14
+  resolution: "@nestjs/websockets@npm:11.1.14"
   dependencies:
     iterare: "npm:1.2.1"
     object-hash: "npm:3.0.0"
@@ -2842,7 +2853,7 @@ __metadata:
   peerDependenciesMeta:
     "@nestjs/platform-socket.io":
       optional: true
-  checksum: 10c0/a7e602b1fa48c9aa6adcb362e53f0d92a4db1c497c63c455d37aeed5f1cf5e32a30c69077b2eee951851162001b058a431f3692e52d45bbeaaac0d9b32d2b657
+  checksum: 10c0/944d3272d1bab6cfa46a207f80b5947c5f73779e41c309b5daaa7c2e841552e197d136eb940b910bdb3fb5b8f4843dd68da2908a34a417a52bee2c317c9ade08
   languageName: node
   linkType: hard
 
@@ -6116,18 +6127,18 @@ __metadata:
   resolution: "easy-backend@workspace:apps/backend"
   dependencies:
     "@nestjs/cli": "npm:^11.0.0"
-    "@nestjs/common": "npm:^11.1.13"
+    "@nestjs/common": "npm:^11.1.14"
     "@nestjs/config": "npm:^4.0.3"
-    "@nestjs/core": "npm:^11.1.13"
+    "@nestjs/core": "npm:^11.1.14"
     "@nestjs/event-emitter": "npm:^3.0.1"
     "@nestjs/jwt": "npm:^11.0.0"
     "@nestjs/mongoose": "npm:^11.0.2"
     "@nestjs/passport": "npm:^11.0.5"
-    "@nestjs/platform-express": "npm:^11.1.13"
-    "@nestjs/platform-socket.io": "npm:^11.1.13"
+    "@nestjs/platform-express": "npm:^11.1.14"
+    "@nestjs/platform-socket.io": "npm:^11.1.14"
     "@nestjs/schematics": "npm:^11.0.0"
     "@nestjs/testing": "npm:^11.0.1"
-    "@nestjs/websockets": "npm:^11.1.13"
+    "@nestjs/websockets": "npm:^11.1.14"
     bcrypt: "npm:^5.1.1"
     mongoose: "npm:^8.12.2"
     ngrok: "npm:^5.0.0-beta.2"
@@ -6144,8 +6155,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "easy-mobile@workspace:apps/mobile"
   dependencies:
-    "@expo/vector-icons": "npm:^15.0.3"
-    "@lottiefiles/dotlottie-react": "npm:^0.18.0"
+    "@expo/vector-icons": "npm:^15.1.1"
+    "@lottiefiles/dotlottie-react": "npm:^0.18.2"
     "@react-native-async-storage/async-storage": "npm:2.2.0"
     "@react-navigation/native": "npm:^7.1.28"
     "@shopify/flash-list": "npm:2.2.2"
@@ -6176,9 +6187,9 @@ __metadata:
     react-dom: "npm:19.2.4"
     react-native: "npm:0.84.0"
     react-native-qrcode-styled: "npm:^0.4.0"
-    react-native-reanimated: "npm:~4.2.1"
+    react-native-reanimated: "npm:~4.2.2"
     react-native-safe-area-context: "npm:~5.6.0"
-    react-native-screens: "npm:~4.23.0"
+    react-native-screens: "npm:~4.24.0"
     react-native-svg: "npm:^15.15.3"
     react-native-web: "npm:~0.21.0"
     react-native-worklets: "npm:0.7.4"
@@ -10922,9 +10933,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-reanimated@npm:~4.2.1":
-  version: 4.2.1
-  resolution: "react-native-reanimated@npm:4.2.1"
+"react-native-reanimated@npm:~4.2.2":
+  version: 4.2.2
+  resolution: "react-native-reanimated@npm:4.2.2"
   dependencies:
     react-native-is-edge-to-edge: "npm:1.2.1"
     semver: "npm:7.7.3"
@@ -10932,7 +10943,7 @@ __metadata:
     react: "*"
     react-native: "*"
     react-native-worklets: ">=0.7.0"
-  checksum: 10c0/1458fb634d374125931c5815b2b0941e12b1a880ba12b4ff6bba12b6c101e0ce1f5c32a2226034ae762558e38077ae112d8498eb2c8af6bd967524c7e7f87c6b
+  checksum: 10c0/878ac966fdedd635638d997851c540f58a48deaea3fcea7d612b8decd1ab630be308edb9ae56a10bc7ba4cf34e1b72d786cdb615205807bfd8d61ff50a964114
   languageName: node
   linkType: hard
 
@@ -10946,16 +10957,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-screens@npm:~4.23.0":
-  version: 4.23.0
-  resolution: "react-native-screens@npm:4.23.0"
+"react-native-screens@npm:~4.24.0":
+  version: 4.24.0
+  resolution: "react-native-screens@npm:4.24.0"
   dependencies:
     react-freeze: "npm:^1.0.0"
     warn-once: "npm:^0.1.0"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 10c0/91c0c9840d36923adc49cb0d463f4e6b63d63060245029d49f8b80d82a405fcecce2196695c993f214c5ecb945e1b0bfb8ec0b8b44845b1438b8fac0d9ed53a7
+  checksum: 10c0/49299e694ed20cf5a8c0f86702eb77df03f5b7353d9b73e7415bb593ac5ff3aa4dfe76b1e9d8efb0fd926917e507f02f13e0a8791c8833910080454b66d99943
   languageName: node
   linkType: hard
 
