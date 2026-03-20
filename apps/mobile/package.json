@@ -5,7 +5,7 @@
   "scripts": {
     "mobile": "expo start --tunnel -c",
     "update-env": "node update-env.js",
-    "dev": "npm run update-env && expo start --tunnel -c",
+    "dev": "npm run update-env && expo start -c",
     "start": "expo start --tunnel -c",
     "android": "expo start --android",
     "ios": "expo start --ios",
