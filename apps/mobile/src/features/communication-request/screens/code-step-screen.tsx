@@ -8,7 +8,7 @@ import UserService from "@/services/UserService";
 import { usePathname, useRouter } from "expo-router";
 import { useState } from "react";
 
-export default function Code() {
+export default function CodeStepScreen() {
   const { push } = useRouter();
   const [codeInput, setCodeInput] = useState("CAMERA");
   const pathName = usePathname();
