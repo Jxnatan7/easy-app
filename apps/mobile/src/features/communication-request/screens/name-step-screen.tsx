@@ -11,7 +11,7 @@ import useCreateCommunicationRequest from "@/hooks/useCreateCommunicationRequest
 import { useDebounce } from "@/hooks/useDebounce";
 import { useCommunicationRequestContext } from "@/contexts/CommunicationRequestContext";
 
-export default function Name() {
+export default function NameStepScreen() {
   const { push } = useRouter();
   const [name, setName] = useState<string>("");
 
@@ -22,7 +22,7 @@ export default function Name() {
     (text: string) => {
       setName(text);
     },
-    500
+    500,
   );
 
   const handleSubmit = async () => {
