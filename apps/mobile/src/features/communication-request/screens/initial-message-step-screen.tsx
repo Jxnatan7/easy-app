@@ -7,7 +7,7 @@ import { useCommunicationRequestContext } from "@/contexts/CommunicationRequestC
 import { useRouter } from "expo-router";
 import { useState } from "react";
 
-export default function InitialMessage() {
+export default function InitialMessageStepScreen() {
   const { push } = useRouter();
   const [messageSelected, setMessageSelected] = useState<string>();
 
