@@ -1,5 +1,5 @@
 import axiosClient from "@/api/axiosClient";
-import { User } from "@/stores/authStore";
+import { User } from "@/src/features/auth/store/authStore";
 
 export type LoginResponse = {
   token: string;
@@ -27,7 +27,7 @@ export const AuthService = {
         name,
         email,
         password,
-      }
+      },
     );
     return data;
   },

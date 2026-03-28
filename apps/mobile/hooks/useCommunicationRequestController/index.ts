@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useAuthStore } from "@/stores/authStore";
+import { useAuthStore } from "@/src/features/auth/store/authStore";
 import useCommunicationRequests from "@/hooks/useCommunicationRequests";
 import useCommunicationRequestsSocket from "@/hooks/useCommunicationRequestsSocket";
 import { PaginatedResult } from "@/components/theme/PaginatedFlashList";
@@ -23,7 +23,7 @@ export function useCommunicationRequestController(search?: string) {
   const fetchRequests = useCallback(
     async (
       page: number,
-      pageSize: number
+      pageSize: number,
     ): Promise<PaginatedResult<RequestItem> | undefined> => {
       if (!user?.id) return undefined;
 
@@ -42,7 +42,7 @@ export function useCommunicationRequestController(search?: string) {
 
       return response;
     },
-    [user?.id, mutateAsync, clearNewRequests, search]
+    [user?.id, mutateAsync, clearNewRequests, search],
   );
 
   return {

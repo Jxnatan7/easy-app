@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useAppStore } from "@/stores/appStore";
-import { useAuthStore } from "@/stores/authStore";
+import { useAuthStore } from "@/src/features/auth/store/authStore";
 
 export type UserFormValues = {
   name: string;
@@ -20,7 +20,7 @@ export function useUserForm() {
       phone: user?.phone ?? "",
       code: user?.code ?? "",
     }),
-    [user]
+    [user],
   );
 
   const handleSubmit = async (values: UserFormValues) => {

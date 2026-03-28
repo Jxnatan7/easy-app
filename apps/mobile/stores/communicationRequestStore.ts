@@ -1,7 +1,7 @@
 import { createJSONStorage, persist } from "zustand/middleware";
 import { create } from "zustand";
 import { generalStorage } from "./store";
-import { User } from "./authStore";
+import { User } from "../src/features/auth/store/authStore";
 
 export type CommunicationRequestState = {
   code: string | null;
@@ -78,6 +78,6 @@ export const useCommunicationRequestStore = create<CommunicationRequestState>()(
     {
       name: "communication-request-storage",
       storage: createJSONStorage(() => generalStorage),
-    }
-  )
+    },
+  ),
 );

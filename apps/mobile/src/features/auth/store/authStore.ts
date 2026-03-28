@@ -1,9 +1,9 @@
 import { AuthService } from "@/services/AuthService";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
-import { secureStorage } from "./store";
-import { useAppStore } from "./appStore";
-import { useCommunicationRequestStore } from "./communicationRequestStore";
+import { secureStorage } from "../../../../stores/store";
+import { useAppStore } from "../../../../stores/appStore";
+import { useCommunicationRequestStore } from "../../../../stores/communicationRequestStore";
 
 export type User = {
   _id: string;
@@ -113,6 +113,6 @@ export const useAuthStore = create<AuthState>()(
       onRehydrateStorage: () => (state) => {
         state?.setHasHydrated(true);
       },
-    }
-  )
+    },
+  ),
 );

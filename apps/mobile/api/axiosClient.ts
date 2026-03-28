@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useAuthStore } from "@/stores/authStore";
+import { useAuthStore } from "@/src/features/auth/store/authStore";
 import { useCommunicationRequestStore } from "@/stores/communicationRequestStore";
 import { Platform } from "react-native";
 
@@ -29,7 +29,7 @@ axiosClient.interceptors.request.use(
 
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
 
 axiosClient.interceptors.response.use(
@@ -39,7 +39,7 @@ axiosClient.interceptors.response.use(
       useAuthStore.getState().logout();
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 export default axiosClient;

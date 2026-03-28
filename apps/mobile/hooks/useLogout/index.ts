@@ -1,4 +1,4 @@
-import { useAuthStore } from "@/stores/authStore";
+import { useAuthStore } from "@/src/features/auth/store/authStore";
 
 export function useLogout() {
   const { logout } = useAuthStore();

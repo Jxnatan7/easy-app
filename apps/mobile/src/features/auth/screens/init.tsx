@@ -4,7 +4,7 @@ import { Container } from "@/components/theme/Container";
 import { PlanetAnimation } from "@/components/theme/PlanetAnimation";
 import { ThemeButton } from "@/components/theme/ThemeButton";
 import { useAppStore } from "@/stores/appStore";
-import { useAuthStore } from "@/stores/authStore";
+import { useAuthStore } from "@/src/features/auth/store/authStore";
 import { useCommunicationRequestStore } from "@/stores/communicationRequestStore";
 import { Redirect, useRouter } from "expo-router";
 

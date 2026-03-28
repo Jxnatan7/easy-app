@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 import { generalStorage } from "./store";
 import UserService from "@/services/UserService";
-import { useAuthStore } from "./authStore";
+import { useAuthStore } from "../src/features/auth/store/authStore";
 
 type AppState = {
   theme: "light" | "dark";
@@ -70,6 +70,6 @@ export const useAppStore = create<AppState>()(
     {
       name: "app-storage",
       storage: createJSONStorage(() => generalStorage),
-    }
-  )
+    },
+  ),
 );

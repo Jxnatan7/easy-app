@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { useCommunicationRequestStore } from "@/stores/communicationRequestStore";
 import useChatMessages from "@/hooks/useChatMessages";
 import useChatSocket from "@/hooks/useChatSocket";
-import { useAuthStore } from "@/stores/authStore";
+import { useAuthStore } from "@/src/features/auth/store/authStore";
 
 export function useChatController(chatId: string) {
   const userToken = useAuthStore((s) => s.token);
@@ -11,7 +11,7 @@ export function useChatController(chatId: string) {
   const visitorToken = useCommunicationRequestStore((s) => s.visitorToken);
   const visitorId = useCommunicationRequestStore((s) => s.visitorId);
   const visitorCommunicationRequestId = useCommunicationRequestStore(
-    (s) => s.communicationRequestId
+    (s) => s.communicationRequestId,
   );
 
   const activeToken = userToken || visitorToken || "";
