@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useCommunicationRequestStore } from "@/stores/communicationRequestStore";
+import { useCommunicationRequestStore } from "@/src/features/communication-request/store/communicationRequestStore";
 import useChatMessages from "@/hooks/useChatMessages";
 import useChatSocket from "@/hooks/useChatSocket";
 import { useAuthStore } from "@/src/features/auth/store/authStore";

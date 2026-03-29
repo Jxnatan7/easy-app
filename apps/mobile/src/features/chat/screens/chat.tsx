@@ -25,7 +25,7 @@ import { ActionModal } from "@/components/theme/ActionModal";
 import useValidateCommunication from "@/hooks/useValidateCommunication";
 import { useQueryClient } from "@tanstack/react-query";
 import { useLogout } from "@/hooks/useLogout";
-import { useCommunicationRequestStore } from "@/stores/communicationRequestStore";
+import { useCommunicationRequestStore } from "@/src/features/communication-request/store/communicationRequestStore";
 import { ThemeButton } from "@/components/theme/ThemeButton";
 
 export default function ChatScreen() {

@@ -5,7 +5,7 @@ import { PlanetAnimation } from "@/components/theme/PlanetAnimation";
 import { ThemeButton } from "@/components/theme/ThemeButton";
 import { useAppStore } from "@/stores/appStore";
 import { useAuthStore } from "@/src/features/auth/store/authStore";
-import { useCommunicationRequestStore } from "@/stores/communicationRequestStore";
+import { useCommunicationRequestStore } from "@/src/features/communication-request/store/communicationRequestStore";
 import { Redirect, useRouter } from "expo-router";
 
 export default function InitScreen() {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useAuthStore } from "@/src/features/auth/store/authStore";
-import { useCommunicationRequestStore } from "@/stores/communicationRequestStore";
+import { useCommunicationRequestStore } from "@/src/features/communication-request/store/communicationRequestStore";
 import { Platform } from "react-native";
 
 const mobileBaseURL =

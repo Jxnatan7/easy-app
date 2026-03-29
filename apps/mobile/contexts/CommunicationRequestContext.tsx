@@ -1,7 +1,7 @@
 import {
   CommunicationRequestState,
   useCommunicationRequestStore,
-} from "@/stores/communicationRequestStore";
+} from "@/src/features/communication-request/store/communicationRequestStore";
 import { createContext, useContext, useMemo } from "react";
 
 const CommunicationRequestContext =
@@ -29,7 +29,7 @@ export const useCommunicationRequestContext = () => {
   const context = useContext(CommunicationRequestContext);
   if (context === null) {
     throw new Error(
-      "useCommunicationRequest must be used within a CommunicationRequestProvider"
+      "useCommunicationRequest must be used within a CommunicationRequestProvider",
     );
   }
   return context;

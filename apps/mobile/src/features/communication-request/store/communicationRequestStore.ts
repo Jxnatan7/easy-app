@@ -1,7 +1,7 @@
 import { createJSONStorage, persist } from "zustand/middleware";
 import { create } from "zustand";
-import { generalStorage } from "./store";
-import { User } from "../src/features/auth/store/authStore";
+import { generalStorage } from "../../../../stores/store";
+import { User } from "../../auth/store/authStore";
 
 export type CommunicationRequestState = {
   code: string | null;

@@ -3,7 +3,7 @@ import { Box, Text } from "@/components/restyle";
 import { Container } from "@/components/theme/Container";
 import LottieView from "lottie-react-native";
 import useCommunicationAccepted from "@/hooks/useCommunicationAccepted";
-import { useCommunicationRequestStore } from "@/stores/communicationRequestStore";
+import { useCommunicationRequestStore } from "@/src/features/communication-request/store/communicationRequestStore";
 import { useRouter } from "expo-router";
 import { useAppStore } from "@/stores/appStore";
 import { StyleSheet } from "react-native";

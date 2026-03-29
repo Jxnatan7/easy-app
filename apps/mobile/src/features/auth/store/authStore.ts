@@ -3,7 +3,7 @@ import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 import { secureStorage } from "../../../../stores/store";
 import { useAppStore } from "../../../../stores/appStore";
-import { useCommunicationRequestStore } from "../../../../stores/communicationRequestStore";
+import { useCommunicationRequestStore } from "../../communication-request/store/communicationRequestStore";
 
 export type User = {
   _id: string;
