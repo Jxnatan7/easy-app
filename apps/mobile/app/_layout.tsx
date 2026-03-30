@@ -6,7 +6,7 @@ import { ThemeProvider } from "@shopify/restyle";
 import theme, { darkTheme } from "@/theme";
 import { StatusBar } from "expo-status-bar";
 import KeyboardProvider from "@/contexts/KeyboardContext";
-import { AuthProvider } from "@/contexts/AuthProvider";
+import { AuthProvider } from "@/src/features/auth/contexts/AuthProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import useAssets from "@/hooks/useAssets";

@@ -1,7 +1,7 @@
 import { RestyleTouchableOpacity } from "@/components/restyle";
 import { Container } from "@/components/theme/Container";
 import { Form, FormButton, FormTextInput } from "@/components/theme/Form";
-import { useAuthActions } from "@/contexts/AuthProvider";
+import { useAuthActions } from "@/src/features/auth/contexts/AuthProvider";
 import { useUserForm } from "@/hooks/useUserForm";
 import { userFormValidation } from "@/utils/schemaValidation";
 import { Alert } from "react-native";

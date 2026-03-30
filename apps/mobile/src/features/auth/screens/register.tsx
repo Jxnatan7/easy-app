@@ -4,7 +4,7 @@ import { Container } from "@/components/theme/Container";
 import { useRouter } from "expo-router";
 import { Form, FormTextInput, FormButton } from "@/components/theme/Form";
 import { registerFormValidation } from "@/utils/schemaValidation";
-import { useAuthActions } from "@/contexts/AuthProvider";
+import { useAuthActions } from "@/src/features/auth/contexts/AuthProvider";
 
 export default function RegisterScreen() {
   const { replace, push } = useRouter();

@@ -5,7 +5,7 @@ import { Text } from "@/components/restyle";
 import Button from "@/components/theme/Button";
 import { Form, FormTextInput, FormButton } from "@/components/theme/Form";
 import { loginFormValidation } from "@/utils/schemaValidation";
-import { useAuthActions } from "@/contexts/AuthProvider";
+import { useAuthActions } from "@/src/features/auth/contexts/AuthProvider";
 
 export default function LoginScreen() {
   const { replace, push } = useRouter();
