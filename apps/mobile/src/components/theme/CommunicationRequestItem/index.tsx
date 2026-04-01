@@ -8,7 +8,7 @@ import { ListItemIcon } from "../ListItemIcon";
 import { ListItemInfo } from "../ListItemInfo";
 import { Ionicons } from "@expo/vector-icons";
 import theme from "@/theme";
-import { formatMessageDate } from "@/utils/dateFormat";
+import { formatMessageDate } from "@/theme/utils/dateFormat";
 export type ListItemProps = RestyleTouchableOpacityProps & {
   item: any;
   hideIcon?: boolean;

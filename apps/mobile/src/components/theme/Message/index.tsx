@@ -1,5 +1,5 @@
 import { Box, Text } from "@/components/restyle";
-import { formatMessageDate } from "@/utils/dateFormat";
+import { formatMessageDate } from "@/theme/utils/dateFormat";
 
 export type MessageProps = {
   content: string;
