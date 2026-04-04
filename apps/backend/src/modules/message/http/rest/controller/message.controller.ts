@@ -10,7 +10,7 @@ import { AuthGuard } from "@nestjs/passport";
 import {
   FilterRequest,
   PaginatedResult,
-} from "src/@core/services/mongo-query.service";
+} from "src/infrastructure/database/mongo/services/mongo-query.service";
 import { MessageDocument } from "src/message/core/schemas/message.schema";
 import { MessageService } from "src/message/core/services/message.service";
 

@@ -15,7 +15,7 @@ import { Public } from "src/decorators/public.decorator";
 import {
   FilterRequest,
   PaginatedResult,
-} from "src/@core/services/mongo-query.service";
+} from "src/infrastructure/database/mongo/services/mongo-query.service";
 import { CommunicationRequest } from "src/communication-request/core/schemas/communication-request.schema";
 
 @UseGuards(JwtAuthGuard)

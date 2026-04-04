@@ -6,7 +6,7 @@ import {
   createMongoQueryService,
   FilterRequest,
   PaginatedResult,
-} from "src/@core/services/mongo-query.service";
+} from "src/infrastructure/database/mongo/services/mongo-query.service";
 
 @Injectable()
 export class MessageService {
