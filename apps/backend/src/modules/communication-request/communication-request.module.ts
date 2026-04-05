@@ -4,7 +4,7 @@ import {
   CommunicationRequestSchema,
 } from "./core/schemas/communication-request.schema";
 import { MongooseModule } from "@nestjs/mongoose";
-import { CommunicationRequestController } from "./http/rest/controller/communication-request.controller";
+import { CommunicationRequestController } from "./infrastructure/http/rest/controller/communication-request.controller";
 import { CommunicationRequestService } from "./core/services/communication-request.service";
 import { UserModule } from "src/user/user.module";
 import { ChatModule } from "src/chat/chat.module";
