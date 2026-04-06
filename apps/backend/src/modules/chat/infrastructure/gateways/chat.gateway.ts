@@ -11,7 +11,7 @@ import {
 import { Server, Socket } from "socket.io";
 import { Injectable, Logger, UnauthorizedException } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
-import { ChatService } from "../core/services/chat.service";
+import { ChatService } from "../../core/services/chat.service";
 import { User } from "src/user/core/schemas/user.schema";
 import { Model, Types } from "mongoose";
 import { InjectModel } from "@nestjs/mongoose";

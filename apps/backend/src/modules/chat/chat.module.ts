@@ -4,7 +4,7 @@ import { Chat, ChatSchema } from "./core/schemas/chat.schema";
 import { WsJwtGuard } from "src/auth/guards/ws-jwt.guard";
 import { ChatService } from "./core/services/chat.service";
 import { ConfigModule } from "@nestjs/config";
-import { ChatGateway } from "./gateways/chat.gateway";
+import { ChatGateway } from "./infrastructure/gateways/chat.gateway";
 import { UserModule } from "src/user/user.module";
 import { CommunicationRequestModule } from "src/communication-request/communication-request.module";
 import { AuthModule } from "src/auth/auth.module";
@@ -12,7 +12,7 @@ import {
   CommunicationRequest,
   CommunicationRequestSchema,
 } from "src/communication-request/core/schemas/communication-request.schema";
-import { ChatController } from "./http/rest/controller/chat.controller";
+import { ChatController } from "./infrastructure/http/rest/controller/chat.controller";
 import {
   Message,
   MessageSchema,
