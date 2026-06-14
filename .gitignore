@@ -37,3 +37,8 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+# Claude Code local settings (skills + commands are committed)
+.claude/settings.local.json
+.claude/projects/
+.claude/.credentials*
